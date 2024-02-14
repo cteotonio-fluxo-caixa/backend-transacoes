@@ -100,6 +100,60 @@ http://host:port/api/MetodoPagamento
 http://host:port/api/MetodoPagamento/listartodos
 ```
 
+## Categoria da Transação [/api/MetodoPagamento]
+### Criar uma Categoria da Transação [/] [POST]
++ Request Criar categoria da transação 
+    + Headers
+            Accept: application/json
+            Content-Type: application/json
+    + Attributes (CategoriaTransacaoRequest)
++ Response 200 (application/json)
+    + Attributes (CategoriaTransacaoResponse)
++ Response 400 (application/json)
+    + Attributes (Error400)
++ Response 500 (application/json)
+    + Attributes (Error)
+#### body
+```json
+{
+  "nome": "Nome da categoria da transacao",
+  "descricao": "Decrição da categoria da transacao"
+}
+```
+#### Curl
+```curl -X 'POST' \
+  'http://host:port/api/CategoriaTransacao' \
+  -H 'accept: text/plain' \
+  -H 'Content-Type: application/json' \
+  -d 'body'
+```
+#### Request URL
+```
+http://host:port/api/CategoriaTransacao
+```
+
+### Listar CategoriaTransacao [/listartodos] [GET]
++ Listar todas as categorias de transação 
+    + Headers
+            Accept: application/json
+            Content-Type: application/json
++ Response 200 (application/json)
+    + Attributes (Lista CategoriaTransacaoResponse)
++ Response 400 (application/json)
+    + Attributes (Error400)
++ Response 500 (application/json)
+    + Attributes (Error)
+      
+#### Curl
+```curl -X 'GET' \
+  'http://host:port/api/CategoriaTransacao/listartodos' \
+  -H 'accept: text/plain' \
+```
+#### Request URL
+```
+http://host:port/api/CategoriaTransacao/listartodos
+```
+
 # Estrutura de Dados
 ## TransacaoRequest (object)
 + valor (number) - Valor da transação
@@ -120,6 +174,15 @@ http://host:port/api/MetodoPagamento/listartodos
 + id (string($uuid)) - Código do Método de Pagamento
 + nome (string) - Nome do método de pagamento
 + descrição (string) - Descrição do método de pagamento
+
+## CategoriaTransacaoRequest (object)
++ nome (string) - Nome da categoria da transação
++ descrição (string) - Descrição da categoria da transação
+
+## CategoriaTransacaoResponse (object)
++ id (string($uuid)) - Código da categoria da transação
++ nome (string) - Nome da categoria da transação
++ descrição (string) - Descrição da categoria da transação
   
 ## Error (object)
 + code: 500 (number) - Status code
