@@ -6,7 +6,7 @@ HOST-DEV: http://localhost:XXXX/v1
 HOST-DOCKER: http://localhost:8080/v1
 
 
-# Serviço de Controle de Transações
+# EndPoints
 ## Transação [/api/Transacao]
 ### Criar uma Transacao [/] [POST]
 + Request Criar uma transacao 
