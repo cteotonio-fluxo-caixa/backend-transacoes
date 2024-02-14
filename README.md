@@ -8,7 +8,7 @@ HOST-DOCKER: http://localhost:8080/v1
 
 # Serviço de Controle de Transações
 ## Transação [/api/Transacao]
-### Criar uma Transacao [POST]
+### Criar uma Transacao [/] [POST]
 + Request Criar uma transacao 
     + Headers
             Accept: application/json
@@ -36,7 +36,7 @@ HOST-DOCKER: http://localhost:8080/v1
 ```
 
 ## Método de Pagamento [/api/MetodoPagamento]
-### Criar um Método de Pagameto [POST]
+### Criar um Método de Pagameto [/] [POST]
 + Request Criar um método de pagamento 
     + Headers
             Accept: application/json
@@ -55,6 +55,18 @@ HOST-DOCKER: http://localhost:8080/v1
   "descricao": "Decrição do método de pagamento"
 }
 ```
+
+### Listar Métodos de Pagameto [/listartodos] [GET]
++ Listar todos os métodos de pagamento 
+    + Headers
+            Accept: application/json
+            Content-Type: application/json
++ Response 200 (application/json)
+    + Attributes (Lista MetodoPagamentoResponse)
++ Response 400 (application/json)
+    + Attributes (Error400)
++ Response 500 (application/json)
+    + Attributes (Error)
 
 
 # Estrutura de Dados
