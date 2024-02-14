@@ -34,6 +34,17 @@ HOST-DOCKER: http://localhost:8080/v1
   "metodoPagamentoId": "3fa85f64-5717-4562-b3fc-2c963f66afa6"
 }
 ```
+#### Curl
+```curl -X 'POST' \
+  'http://host:port/api/Transacao' \
+  -H 'accept: text/plain' \
+  -H 'Content-Type: application/json' \
+  -d 'body'
+```
+#### Request URL
+```
+http://host:port/api/Transacao
+```
 
 ## Método de Pagamento [/api/MetodoPagamento]
 ### Criar um Método de Pagameto [/] [POST]
@@ -55,6 +66,17 @@ HOST-DOCKER: http://localhost:8080/v1
   "descricao": "Decrição do método de pagamento"
 }
 ```
+#### Curl
+```curl -X 'POST' \
+  'http://host:port/api/MetodoPagamento' \
+  -H 'accept: text/plain' \
+  -H 'Content-Type: application/json' \
+  -d 'body'
+```
+#### Request URL
+```
+http://host:port/api/MetodoPagamento
+```
 
 ### Listar Métodos de Pagameto [/listartodos] [GET]
 + Listar todos os métodos de pagamento 
@@ -67,7 +89,16 @@ HOST-DOCKER: http://localhost:8080/v1
     + Attributes (Error400)
 + Response 500 (application/json)
     + Attributes (Error)
-
+      
+#### Curl
+```curl -X 'GET' \
+  'http://host:port/api/MetodoPagamento/listartodos' \
+  -H 'accept: text/plain' \
+```
+#### Request URL
+```
+http://host:port/api/MetodoPagamento/listartodos
+```
 
 # Estrutura de Dados
 ## TransacaoRequest (object)
