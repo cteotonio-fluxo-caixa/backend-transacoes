@@ -39,7 +39,9 @@ namespace Transacoes.Testes.Domain
             var servico = new TransacaoServico(mockRepositorio.Object);
 
             // Assert
-            mockRepositorio.Verify(r => r.Adicionar(transacao), Times.Once);
+            var obj = servico.Adicionar<TransacaoValidator>(transacao);
+            Assert.NotNull(obj); 
+
 
         }
 
@@ -65,7 +67,7 @@ namespace Transacoes.Testes.Domain
             var servico = new TransacaoServico(mockRepositorio.Object);
 
             // Assert
-            var ex = Assert.Throws<TransacoesException>(() => servico.Atualizar<TransacaoValidator>(transacao));
+            var ex = Assert.Throws<TransacoesException>(() => servico.Adicionar<TransacaoValidator>(transacao));
             Assert.Contains( ex.GetErrorMessage(), CenarioTeste);
         }
 

@@ -12,6 +12,11 @@ namespace Transacoes.Core.Entities
     public class CategoriaTransacao : BaseEntities
     {
         /// <summary>
+        /// Contrutor Padrão
+        /// </summary>
+        public CategoriaTransacao() { }
+
+        /// <summary>
         /// Contrutor
         /// </summary>
         /// <param name="nome">Nome da categoria</param>

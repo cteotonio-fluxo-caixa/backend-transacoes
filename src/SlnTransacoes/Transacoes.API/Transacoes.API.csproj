@@ -26,10 +26,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Models\Response\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\Transacoes.Aplicacao\Transacoes.Aplicacao.csproj" />
     <ProjectReference Include="..\Transacoes.Infraestrutura\Transacoes.Infraestrutura.csproj" />
   </ItemGroup>

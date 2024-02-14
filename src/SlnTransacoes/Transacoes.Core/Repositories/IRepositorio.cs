@@ -11,7 +11,7 @@ namespace Transacoes.Core.Repositories
     {
         IEnumerable<T> ObterTodos();
         IEnumerable<T> Encontrar(Expression<Func<T, bool>> predicate);
-        T ObterPorId(int id);
+        T ObterPorId(Guid id);
         void Adicionar(T entity);
         void Atualizar(T entity);
         void Remover(T entity);

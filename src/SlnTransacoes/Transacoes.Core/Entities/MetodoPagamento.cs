@@ -11,6 +11,10 @@ namespace Transacoes.Core.Entities
     /// </summary>
     public class MetodoPagamento: BaseEntities
     {
+        public MetodoPagamento()
+        {
+        }
+
         /// <summary>
         /// Construtor
         /// </summary>

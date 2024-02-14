@@ -15,7 +15,15 @@ namespace Transacoes.API.DependencyInjection
         {
             services.AddScoped<ITransacaoAppService, TransacaoAppService>();
             services.AddScoped<ITransacaoServico, TransacaoServico>();
-            services.AddScoped<ITransacaoRepositorio, EFTransacaoRepository>();
+            services.AddScoped<ITransacaoRepositorio, EFTransacaoRepositorio>();
+
+            services.AddScoped<IMetodoPagamentoAppService, MetodoPagamentoAppService>();
+            services.AddScoped<IMetodoPagamentoServico, MetodoPagamentoServico>();
+            services.AddScoped<IMetodoPagamentoRepositorio, EFMetodoPagamentoRepositorio>();
+
+            services.AddScoped<ICategoriaTransacaoAppService, CategoriaTransacaoAppService>();
+            services.AddScoped<ICategoriaTransacaoServico, CategoriaTransacaoServico>();
+            services.AddScoped<ICategoriaTransacaoRepositorio, EFCategoriaTransacaoRepositorio>();
             return services;
         }
 

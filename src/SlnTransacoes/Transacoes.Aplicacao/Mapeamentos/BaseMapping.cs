@@ -9,16 +9,7 @@ using Transacoes.Core.Entities;
 
 namespace Transacoes.Aplicacao.Mapeamentos
 {
-    //public class TransacaoMapping: Profile
-    //{
-    //    public TransacaoMapping()
-    //    {
-    //        CreateMap<Transacao, TransacaoDTO>();
-    //        CreateMap<TransacaoDTO, Transacao>();
-    //    }
-    //}
-
-
+    
     public class MappingProfile<T, TDto> : Profile
     where T : BaseEntities
     where TDto : BaseDto
@@ -35,6 +26,8 @@ namespace Transacoes.Aplicacao.Mapeamentos
         {
             // Registrar todos os tipos de entidades e DTOs que serão usados em sua aplicação
             CreateMap<Transacao, TransacaoDTO>().ReverseMap();
+            CreateMap<MetodoPagamento, MetodoPagamentoDTO>().ReverseMap();
+            CreateMap<CategoriaTransacao, CategoriaTransacaoDTO>().ReverseMap();
             // Adicione outros mapeamentos aqui, se necessário
         }
     }

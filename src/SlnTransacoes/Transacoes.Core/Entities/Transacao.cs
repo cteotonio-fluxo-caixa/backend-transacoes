@@ -20,8 +20,6 @@ namespace Transacoes.Core.Entities
             Id = Guid.NewGuid();
             DataTransacao = DateTime.Now;
             IsCredito = true;
-
-        
          }
 
         /// <summary>

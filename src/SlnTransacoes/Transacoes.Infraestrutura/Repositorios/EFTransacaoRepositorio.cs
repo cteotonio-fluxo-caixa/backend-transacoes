@@ -9,18 +9,18 @@ using Transacoes.Core.Repositories;
 
 namespace Transacoes.Infraestrutura.Repositorios
 {
-    public class EFTransacaoRepository : ITransacaoRepositorio
+    public class EFTransacaoRepositorio : ITransacaoRepositorio
     {
         private readonly AppDbContext _dbContext;
 
-        public EFTransacaoRepository(AppDbContext dbContext)
+        public EFTransacaoRepositorio(AppDbContext dbContext)
         {
             _dbContext = dbContext ?? throw new ArgumentNullException(nameof(dbContext));
         }
 
         public Transacao ObterPorId(Guid id)
         {
-            return null; //_dbContext.Set<Transacao>().FirstOrDefault(t => t.Id == id);
+            return _dbContext.Set<Transacao>().FirstOrDefault(t => t.Id == id);
         }
 
         public IEnumerable<Transacao> ObterTodos()
