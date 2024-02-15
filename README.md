@@ -1,6 +1,10 @@
 # Projeto Fluxo de Caixa - Serviço de Controle de Transações
 Serviço dedicado ao controle de movimentação financeira
 
+>[!IMPORTANTE]
+>Caso você ainda não tenha visitado a página inicial deste projeto, recomendo começar por ela, pois há informações importantes sobre o projeto e configurações de ambiente.
+>[Pagina inicial](https://github.com/cteotonio-fluxo-caixa)
+
 *******
 Tabelas de conteúdo 
  1. [EndPoints](#endipoints)
