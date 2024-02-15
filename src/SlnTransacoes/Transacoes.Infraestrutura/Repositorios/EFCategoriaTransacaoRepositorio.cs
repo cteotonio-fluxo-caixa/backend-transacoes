@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
@@ -24,16 +25,19 @@ namespace Transacoes.Infraestrutura.Repositorios
             _dbContext.SaveChanges();
         }
 
+        [ExcludeFromCodeCoverage(Justification ="Método ainda não foi implementado")]
         public void Atualizar(CategoriaTransacao entity)
         {
             throw new NotImplementedException();
         }
 
+        [ExcludeFromCodeCoverage(Justification = "Método ainda não foi implementado")]
         public IEnumerable<CategoriaTransacao> Encontrar(Expression<Func<CategoriaTransacao, bool>> predicate)
         {
             throw new NotImplementedException();
         }
 
+        [ExcludeFromCodeCoverage(Justification = "Método ainda não foi implementado")]
         public CategoriaTransacao ObterPorId(Guid id)
         {
             throw new NotImplementedException();
@@ -41,9 +45,10 @@ namespace Transacoes.Infraestrutura.Repositorios
 
         public IEnumerable<CategoriaTransacao> ObterTodos()
         {
-            throw new NotImplementedException();
+            return _dbContext.Set<CategoriaTransacao>().ToList();
         }
 
+        [ExcludeFromCodeCoverage(Justification = "Método ainda não foi implementado")]
         public void Remover(CategoriaTransacao entity)
         {
             throw new NotImplementedException();

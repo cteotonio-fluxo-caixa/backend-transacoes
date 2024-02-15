@@ -41,12 +41,6 @@ namespace Transacoes.API.Controllers
         /// Registra uma nova categoria de transacação.
         /// </summary>
         /// <param name="categoriaTransacao">Os dados da categoria de transação a serem registrados.</param>
-        /// <returns>
-        /// Um IActionResult representando o resultado da operação.
-        /// - Retorna um código 200 (OK) se categoria de transação for registrada com sucesso.
-        /// - Retorna um código 400 (BadRequest) se categoria de transação não puder ser registrada devido a problemas de validação.
-        /// - Retorna um código 500 (InternalServerError) se ocorrer um erro interno ao processar o método de pagamento.
-        /// </returns>
         [ProducesResponseType<CategoriaTransacaoResponse>(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
@@ -68,6 +62,33 @@ namespace Transacoes.API.Controllers
             {
                 Log.Error(ex, "Erro ao registrar categoria de transação: {@CategoriaTransacao}", categoriaTransacao);
                 return StatusCode(500, "Erro interno ao processar a transação.");
+            }
+        }
+
+        /// <summary>
+        /// Retorna uma lista de categorias de transação
+        /// </summary>
+        /// <returns></returns>
+        [ProducesResponseType<List<CategoriaTransacaoResponse>>(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        [HttpGet("listartodos")]
+        public async Task<IActionResult> ListarTodasCategoriasTransacao()
+        {
+            try
+            {
+                var listaCategoriaTransacao = await _categoriaTransacaoAppService.LitsarTodasCategoriasTransacao();
+                var response = _mapper.Map<List<CategoriaTransacaoResponse>>(listaCategoriaTransacao);
+                return Ok(response);
+            }
+            catch (TransacoesException ex)
+            {
+                return BadRequest(new { Mensagem = "O erro ao listar categoria transação", Erro = ex.GetErrorMessage() });
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex, "Erro ao listar categoria transação");
+                return StatusCode(500, "Erro interno ao lista categoria transação.");
             }
         }
     }

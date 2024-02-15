@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Transacoes.Core.Repositories
 {
-    public interface IRepositorio<T> where T : class
+    public interface IBaseRepositorio<T> where T : class
     {
         IEnumerable<T> ObterTodos();
         IEnumerable<T> Encontrar(Expression<Func<T, bool>> predicate);

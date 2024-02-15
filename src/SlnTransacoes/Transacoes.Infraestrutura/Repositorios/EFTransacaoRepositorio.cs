@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
@@ -55,21 +56,25 @@ namespace Transacoes.Infraestrutura.Repositorios
             //return lista;
         }
 
+        [ExcludeFromCodeCoverage]
         public IEnumerable<Transacao> Encontrar(Expression<Func<Transacao, bool>> predicate)
         {
             throw new NotImplementedException();
         }
 
+        [ExcludeFromCodeCoverage]
         public Transacao ObterPorId(int id)
         {
             throw new NotImplementedException();
         }
 
+        [ExcludeFromCodeCoverage]
         public void Atualizar(Transacao entity)
         {
             throw new NotImplementedException();
         }
 
+        [ExcludeFromCodeCoverage]
         public void Remover(Transacao entity)
         {
             throw new NotImplementedException();

@@ -7,7 +7,7 @@ using Transacoes.Core.Entities;
 
 namespace Transacoes.Core.Repositories
 {
-    public interface IMetodoPagamentoRepositorio: IRepositorio<MetodoPagamento>
+    public interface IMetodoPagamentoRepositorio: IBaseRepositorio<MetodoPagamento>
     {
     }
 }

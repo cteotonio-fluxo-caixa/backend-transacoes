@@ -15,13 +15,13 @@ namespace Transacoes.Infraestrutura.EntityConfiguration
         public void Configure(EntityTypeBuilder<CategoriaTransacao> builder)
         {
             // Nome da tabela
-            builder.ToTable("CategoriaTransacao");
+            builder.ToTable("CategoriasTransacoes");
 
             // Chave primária
             builder.HasKey(t => t.Id);
 
             builder.Property(t => t.Id)
-                .HasColumnName("CategoriaTransacaoId");
+                .HasColumnName("CategoriaId");
 
             builder.Property(t => t.Nome)
                 .IsRequired()

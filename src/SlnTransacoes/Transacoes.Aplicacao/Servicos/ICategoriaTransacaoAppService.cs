@@ -11,6 +11,6 @@ namespace Transacoes.Aplicacao.Servicos
     public interface ICategoriaTransacaoAppService
     {
         Task<CategoriaTransacaoDTO> RegistrarCategoriaTransacao(CategoriaTransacaoDTO categoriaTransacaoDTO);
-        Task<List<CategoriaTransacaoDTO>> LitsarTodosMetodosPagamentos();
+        Task<List<CategoriaTransacaoDTO>> LitsarTodasCategoriasTransacao();
     }
 }

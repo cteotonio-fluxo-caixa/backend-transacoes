@@ -36,7 +36,8 @@ namespace Transacoes.Testes.Domain
             transacao.MetodoPagamentoId = MetodoPagamentoId;
 
             var mockRepositorio = new Mock<ITransacaoRepositorio>();
-            var servico = new TransacaoServico(mockRepositorio.Object);
+            var mockRepositorioSaldoDia = new Mock<ISaldoDiaRepositorio>();
+            var servico = new TransacaoServico(mockRepositorio.Object, mockRepositorioSaldoDia.Object);
 
             // Assert
             var obj = servico.Adicionar<TransacaoValidator>(transacao);
@@ -64,7 +65,8 @@ namespace Transacoes.Testes.Domain
             transacao.MetodoPagamentoId = MetodoPagamentoId;
 
             var mockRepositorio = new Mock<ITransacaoRepositorio>();
-            var servico = new TransacaoServico(mockRepositorio.Object);
+            var mockRepositorioSaldoDia = new Mock<ISaldoDiaRepositorio>();
+            var servico = new TransacaoServico(mockRepositorio.Object, mockRepositorioSaldoDia.Object);
 
             // Assert
             var ex = Assert.Throws<TransacoesException>(() => servico.Adicionar<TransacaoValidator>(transacao));

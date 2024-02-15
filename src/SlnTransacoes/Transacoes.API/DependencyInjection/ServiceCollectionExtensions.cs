@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System;
+using System.Diagnostics.CodeAnalysis;
 using Transacoes.Aplicacao.Servicos;
 using Transacoes.Core.Entities;
 using Transacoes.Core.Repositories;
@@ -9,6 +10,7 @@ using Transacoes.Infraestrutura.Repositorios;
 
 namespace Transacoes.API.DependencyInjection
 {
+    [ExcludeFromCodeCoverage]
     public static class ServiceCollectionExtensions
     {
         public static IServiceCollection AddTransacaoApplication(this IServiceCollection services)
@@ -24,6 +26,8 @@ namespace Transacoes.API.DependencyInjection
             services.AddScoped<ICategoriaTransacaoAppService, CategoriaTransacaoAppService>();
             services.AddScoped<ICategoriaTransacaoServico, CategoriaTransacaoServico>();
             services.AddScoped<ICategoriaTransacaoRepositorio, EFCategoriaTransacaoRepositorio>();
+
+            services.AddScoped<ISaldoDiaRepositorio, EFSaldoDiaRepositorio>();
             return services;
         }
 

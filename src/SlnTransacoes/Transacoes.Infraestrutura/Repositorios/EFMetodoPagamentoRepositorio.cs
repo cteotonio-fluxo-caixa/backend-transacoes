@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
@@ -24,16 +25,19 @@ namespace Transacoes.Infraestrutura.Repositorios
             _dbContext.SaveChanges();
         }
 
+        [ExcludeFromCodeCoverage]
         public void Atualizar(MetodoPagamento entity)
         {
             throw new NotImplementedException();
         }
 
+        [ExcludeFromCodeCoverage]
         public IEnumerable<MetodoPagamento> Encontrar(Expression<Func<MetodoPagamento, bool>> predicate)
         {
             throw new NotImplementedException();
         }
 
+        [ExcludeFromCodeCoverage]
         public MetodoPagamento ObterPorId(Guid id)
         {
             return _dbContext.Set<MetodoPagamento>().FirstOrDefault(t => t.Id == id);
@@ -44,6 +48,7 @@ namespace Transacoes.Infraestrutura.Repositorios
             return _dbContext.Set<MetodoPagamento>().ToList();
         }
 
+        [ExcludeFromCodeCoverage]
         public void Remover(MetodoPagamento entity)
         {
             throw new NotImplementedException();

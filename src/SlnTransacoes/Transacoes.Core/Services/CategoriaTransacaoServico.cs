@@ -1,4 +1,5 @@
 ﻿using FluentValidation;
+using System.Diagnostics.CodeAnalysis;
 using Transacoes.Core.Entities;
 using Transacoes.Core.Exceptions;
 using Transacoes.Core.Repositories;
@@ -30,11 +31,13 @@ namespace Transacoes.Core.Services
             return obj;
         }
 
+        [ExcludeFromCodeCoverage(Justification = "Método ainda não foi implementado")]
         public CategoriaTransacao Atualizar<TValidator>(CategoriaTransacao obj) where TValidator : AbstractValidator<CategoriaTransacao>
         {
             throw new NotImplementedException();
         }
 
+        [ExcludeFromCodeCoverage(Justification = "Método ainda não foi implementado")]
         public CategoriaTransacao ObterPorId(int id)
         {
             throw new NotImplementedException();
@@ -42,9 +45,10 @@ namespace Transacoes.Core.Services
 
         public IList<CategoriaTransacao> ObterTodos()
         {
-            throw new NotImplementedException();
+            return _repositorio.ObterTodos().ToList();
         }
 
+        [ExcludeFromCodeCoverage(Justification = "Método ainda não foi implementado")]
         public void Remover(CategoriaTransacao obj)
         {
             throw new NotImplementedException();

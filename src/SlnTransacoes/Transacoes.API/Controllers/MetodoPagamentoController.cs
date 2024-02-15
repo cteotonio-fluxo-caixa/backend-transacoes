@@ -6,6 +6,7 @@ using Transacoes.API.Models.Request;
 using Transacoes.API.Models.Response;
 using Transacoes.Aplicacao.DTOs;
 using Transacoes.Aplicacao.Servicos;
+using Transacoes.Core.Entities;
 using Transacoes.Core.Exceptions;
 
 namespace Transacoes.API.Controllers
@@ -67,6 +68,33 @@ namespace Transacoes.API.Controllers
             catch (Exception ex)
             {
                 Log.Error(ex, "Erro ao registrar método de pagamento: {@MetodoPagamento}", metodoPagamento);
+                return StatusCode(500, "Erro interno ao processar a transação.");
+            }
+        }
+
+        /// <summary>
+        /// Retorna uma lista de métodos de pagamentos
+        /// </summary>
+        /// <returns></returns>
+        [ProducesResponseType<List<MetodoPagamentoResponse>>(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        [HttpGet("listartodos")]
+        public async Task<IActionResult> ListarTodosMetodosPagamento()
+        {
+            try
+            {
+                var listaMetososPagamentos = await _metodoPagamentoAppService.LitsarTodosMetodosPagamentos();
+                var response = _mapper.Map<List<MetodoPagamentoResponse>>(listaMetososPagamentos);
+                return Ok(response);
+            }
+            catch (TransacoesException ex)
+            {
+                return BadRequest(new { Mensagem = "O erro ao listar métodos de pagamentos", Erro = ex.GetErrorMessage() });
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex, "Erro ao listar método de pagamento");
                 return StatusCode(500, "Erro interno ao processar a transação.");
             }
         }

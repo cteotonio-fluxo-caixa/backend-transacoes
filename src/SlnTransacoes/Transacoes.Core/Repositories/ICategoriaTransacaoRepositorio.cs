@@ -7,7 +7,7 @@ using Transacoes.Core.Entities;
 
 namespace Transacoes.Core.Repositories
 {
-    public interface ICategoriaTransacaoRepositorio: IRepositorio<CategoriaTransacao>
+    public interface ICategoriaTransacaoRepositorio: IBaseRepositorio<CategoriaTransacao>
     {
     }
 }

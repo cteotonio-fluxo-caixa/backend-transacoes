@@ -17,9 +17,13 @@ namespace Transacoes.Aplicacao.Servicos
             _mapper = mapper;
         }
 
-        public async Task<List<CategoriaTransacaoDTO>> LitsarTodosMetodosPagamentos()
+        public async Task<List<CategoriaTransacaoDTO>> LitsarTodasCategoriasTransacao()
         {
-            throw new NotImplementedException();
+            var listacategoriaTransacao = _categoriatransacaoServico.ObterTodos();
+            if (listacategoriaTransacao != null)
+                return _mapper.Map<List<CategoriaTransacaoDTO>>(listacategoriaTransacao);
+            else
+                return null;
         }
 
         public async Task<CategoriaTransacaoDTO> RegistrarCategoriaTransacao(CategoriaTransacaoDTO categoriaTransacaoDTO)

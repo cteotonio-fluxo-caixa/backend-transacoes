@@ -25,7 +25,11 @@ namespace Transacoes.Aplicacao.Servicos
 
         public async Task<List<MetodoPagamentoDTO>> LitsarTodosMetodosPagamentos()
         {
-            throw new NotImplementedException();
+            var listaMetodosPagamento = _metodopagamentoServico.ObterTodos();
+            if (listaMetodosPagamento != null)
+                return _mapper.Map<List<MetodoPagamentoDTO>>(listaMetodosPagamento);
+            else
+                return null;
         }
 
         public async Task<MetodoPagamentoDTO> RegistrarMetodoPagamento(MetodoPagamentoDTO metodoPagamentoDTO)
