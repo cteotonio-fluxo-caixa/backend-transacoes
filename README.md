@@ -12,15 +12,14 @@ Tabelas de conteúdo
 
 <div id='endipoints'/>  
 
-## O que é Markdown ?  
-De acordo com a Wikipedia : 
+# EndPoints
     
 FORMATO: 1A
 HOST-DEV: http://localhost:XXXX/v1
 HOST-DOCKER: http://localhost:8080/v1
 
 <div id='transa-o-api-transacao'/> 
-# EndPoints
+
 ## Transação [/api/Transacao]
 ### Criar uma Transacao [/] [POST]
 + Request Criar uma transacao 
@@ -113,7 +112,7 @@ http://host:port/api/MetodoPagamento
 ```
 http://host:port/api/MetodoPagamento/listartodos
 ```
-
+<div id='categoriadatransacao'/> 
 ## Categoria da Transação [/api/MetodoPagamento]
 ### Criar uma Categoria da Transação [/] [POST]
 + Request Criar categoria da transação 
