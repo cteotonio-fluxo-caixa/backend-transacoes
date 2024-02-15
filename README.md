@@ -248,5 +248,7 @@ Ao final da execução deste comando será criada uma pasta na solução do proj
 Clique no arquivo index.html e veja as informações de cobertura por vários níveis, Projeto, Classe e Métodos
 Exemplo do relatório gerado.
 
+<img src="https://github.com/cleteot/repo-fluxo-caixa/blob/master/Documentacao/ExmploCoberturaDeTeste.PNG" alt="Cobertura de Testes">
+
 
 
