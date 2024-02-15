@@ -59,6 +59,7 @@ HOST-DOCKER: http://localhost:8080/v1
 http://host:port/api/Transacao
 ```
 <div id='metododepagamento'/> 
+ 
 ## Método de Pagamento [/api/MetodoPagamento]
 ### Criar um Método de Pagameto [/] [POST]
 + Request Criar um método de pagamento 
@@ -113,6 +114,7 @@ http://host:port/api/MetodoPagamento
 http://host:port/api/MetodoPagamento/listartodos
 ```
 <div id='categoriadatransacao'/> 
+ 
 ## Categoria da Transação [/api/MetodoPagamento]
 ### Criar uma Categoria da Transação [/] [POST]
 + Request Criar categoria da transação 
