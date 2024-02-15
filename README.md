@@ -4,7 +4,10 @@ Serviço dedicado ao controle de movimentação financeira
 *******
 Tabelas de conteúdo 
  1. [EndPoints](#endipoints)
- 2. [Cobertura de Teste](#coberturadetestes)
+      * [Transação](#transa-o-api-transacao)
+      * [Método de Pagamento](#metododepagamento)
+      * [Categoria da Transação](#categoriadatransacao)
+ 3. [Cobertura de Teste](#coberturadetestes)
 *******
 
 <div id='endipoints'/>  
@@ -16,6 +19,7 @@ FORMATO: 1A
 HOST-DEV: http://localhost:XXXX/v1
 HOST-DOCKER: http://localhost:8080/v1
 
+<div id='transa-o-api-transacao'/> 
 # EndPoints
 ## Transação [/api/Transacao]
 ### Criar uma Transacao [/] [POST]
@@ -55,7 +59,7 @@ HOST-DOCKER: http://localhost:8080/v1
 ```
 http://host:port/api/Transacao
 ```
-
+<div id='metododepagamento'/> 
 ## Método de Pagamento [/api/MetodoPagamento]
 ### Criar um Método de Pagameto [/] [POST]
 + Request Criar um método de pagamento 
