@@ -4,10 +4,7 @@ Serviço dedicado ao controle de movimentação financeira
 *******
 Tabelas de conteúdo 
  1. [EndPoints](#endipoints)
- 2. [Porque usar Markdown?](#why)
- 3. [Ferramentas para Markdown](#tools)
- 4. [Sintaxe de Markdown](#syntax)
-
+ 2. [Cobertura de Teste](#coberturadetestes)
 *******
 
 <div id='endipoints'/>  
@@ -209,7 +206,6 @@ http://host:port/api/CategoriaTransacao/listartodos
 + Mensagem (string) - Mensagem de erro
 + erro (string) - Lista de erros ocorridos
 
-<div id='why'/>  
+*******
 
-## O que é Markdown ?  
-De acordo com a Wikipedia : 
+<div id='coberturadetestes'/>  
